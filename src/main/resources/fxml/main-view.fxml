@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.monedero.controller.MainController"
+            styleClass="root-pane">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="top-bar">
+            <padding>
+                <Insets top="14.0" right="24.0" bottom="14.0" left="24.0"/>
+            </padding>
+            <Label text="Monedero Virtual" styleClass="brand-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblUsuarioActivo" text="Hola" styleClass="header-label"/>
+            <Label fx:id="lblRangoActual" text="Rango: BRONCE" styleClass="badge-rango"/>
+            <Label fx:id="lblPuntosActuales" text="0 pts" styleClass="badge-puntos"/>
+            <Button text="Cerrar sesion" onAction="#cerrarSesion" styleClass="btn-secondary"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="8.0" prefWidth="220.0" minWidth="190.0" styleClass="sidebar">
+            <padding>
+                <Insets top="20.0" right="14.0" bottom="20.0" left="14.0"/>
+            </padding>
+            <Label text="Mi Cuenta" styleClass="sidebar-section"/>
+            <Button fx:id="btnNavMonederos" text="Mis Monederos" maxWidth="Infinity" onAction="#mostrarMonederos" styleClass="nav-btn"/>
+            <Button fx:id="btnNavTransacciones" text="Transacciones" maxWidth="Infinity" onAction="#mostrarTransacciones" styleClass="nav-btn"/>
+            <Button fx:id="btnNavPuntos" text="Puntos y Beneficios" maxWidth="Infinity" onAction="#mostrarPuntos" styleClass="nav-btn"/>
+            <Button fx:id="btnNavProgramadas" text="Programadas" maxWidth="Infinity" onAction="#mostrarProgramadas" styleClass="nav-btn"/>
+            <Button fx:id="btnNavReportes" text="Reportes y Alertas" maxWidth="Infinity" onAction="#mostrarReportes" styleClass="nav-btn"/>
+            <Button fx:id="btnNavClientes" text="Mi Perfil" maxWidth="Infinity" onAction="#mostrarClientes" styleClass="nav-btn"/>
+            <Label text="Organizacion" styleClass="sidebar-section">
+                <VBox.margin>
+                    <Insets top="12.0"/>
+                </VBox.margin>
+            </Label>
+            <Button fx:id="btnNavTareas" text="Lista de Tareas" maxWidth="Infinity" onAction="#mostrarTareas" styleClass="nav-btn"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="Cuenta Personal JavaFX" styleClass="sidebar-footer" wrapText="true"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contenedorVista" styleClass="content-area">
+            <padding>
+                <Insets top="24.0" right="28.0" bottom="24.0" left="28.0"/>
+            </padding>
+        </StackPane>
+    </center>
+
+</BorderPane>

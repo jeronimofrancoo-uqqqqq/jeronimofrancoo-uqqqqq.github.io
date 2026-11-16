@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="16.0" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.monedero.controller.ReporteController"
+      styleClass="view-container">
+
+    <VBox spacing="4.0">
+        <Label text="Analisis y Alertas de Cuenta" styleClass="view-title"/>
+        <Label text="Consulta tu patron de gastos y la deteccion de transacciones atipicas en pestanas separadas." styleClass="view-subtitle"/>
+    </VBox>
+
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+            <Tab text="Analisis de Gastos">
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="view-scroll">
+                    <VBox spacing="18.0">
+                        <padding><Insets top="16.0" right="4.0" bottom="8.0" left="4.0"/></padding>
+                        <FlowPane hgap="14.0" vgap="14.0">
+                            <VBox spacing="4.0" prefWidth="240.0" styleClass="card">
+                                <padding><Insets top="14.0" right="16.0" bottom="14.0" left="16.0"/></padding>
+                                <Label text="Ingresos totales" styleClass="kpi-label"/>
+                                <Label fx:id="lblTotalIngresos" text="0.00" styleClass="kpi-value"/>
+                            </VBox>
+                            <VBox spacing="4.0" prefWidth="240.0" styleClass="card">
+                                <padding><Insets top="14.0" right="16.0" bottom="14.0" left="16.0"/></padding>
+                                <Label text="Gastos totales" styleClass="kpi-label"/>
+                                <Label fx:id="lblTotalGastos" text="0.00" styleClass="kpi-value"/>
+                            </VBox>
+                        </FlowPane>
+
+                        <VBox spacing="6.0" styleClass="card">
+                            <padding><Insets top="16.0" right="18.0" bottom="16.0" left="18.0"/></padding>
+                            <Label text="Gastos agrupados por tipo (Stream API)" styleClass="card-title"/>
+                            <Label fx:id="lblResumenTipos" text="-" styleClass="view-subtitle" wrapText="true"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+
+            <Tab text="Anomalias y Alertas">
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="view-scroll">
+                    <VBox spacing="18.0">
+                        <padding><Insets top="16.0" right="4.0" bottom="8.0" left="4.0"/></padding>
+                        <FlowPane hgap="14.0" vgap="14.0">
+                            <VBox spacing="4.0" prefWidth="240.0" styleClass="card">
+                                <padding><Insets top="14.0" right="16.0" bottom="14.0" left="16.0"/></padding>
+                                <Label text="Promedio historico" styleClass="kpi-label"/>
+                                <Label fx:id="lblPromedio" text="0.00" styleClass="kpi-value"/>
+                            </VBox>
+                            <VBox spacing="4.0" prefWidth="240.0" styleClass="card">
+                                <padding><Insets top="14.0" right="16.0" bottom="14.0" left="16.0"/></padding>
+                                <Label text="Umbral atipico (promedio + 2 * desv)" styleClass="kpi-label"/>
+                                <Label fx:id="lblUmbral" text="0.00" styleClass="kpi-value"/>
+                            </VBox>
+                        </FlowPane>
+
+                        <VBox spacing="12.0" styleClass="card">
+                            <padding><Insets top="16.0" right="18.0" bottom="16.0" left="18.0"/></padding>
+                            <Label text="Transacciones atipicas detectadas" styleClass="card-title"/>
+                            <TableView fx:id="tablaAtipicas" prefHeight="160.0" styleClass="modern-table">
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                                <columns>
+                                    <TableColumn fx:id="colAtipicaFecha" text="Fecha"/>
+                                    <TableColumn fx:id="colAtipicaTipo" text="Tipo"/>
+                                    <TableColumn fx:id="colAtipicaMonto" text="Monto"/>
+                                    <TableColumn fx:id="colAtipicaDesc" text="Descripcion"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+
+                        <VBox spacing="12.0" VBox.vgrow="ALWAYS" styleClass="card">
+                            <padding><Insets top="16.0" right="18.0" bottom="16.0" left="18.0"/></padding>
+                            <HBox alignment="CENTER_LEFT">
+                                <Label text="Alertas y notificaciones locales" styleClass="card-title"/>
+                                <Region HBox.hgrow="ALWAYS"/>
+                                <Button text="Marcar todas como leidas" onAction="#marcarAlertasLeidas" styleClass="btn-secondary"/>
+                            </HBox>
+                            <TableView fx:id="tablaAlertas" VBox.vgrow="ALWAYS" minHeight="180.0" styleClass="modern-table">
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                </columnResizePolicy>
+                                <columns>
+                                    <TableColumn fx:id="colAlertaFecha" text="Fecha"/>
+                                    <TableColumn fx:id="colAlertaTipo" text="Tipo"/>
+                                    <TableColumn fx:id="colAlertaMensaje" text="Mensaje"/>
+                                    <TableColumn fx:id="colAlertaEstado" text="Estado"/>
+                                </columns>
+                            </TableView>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+</VBox>
