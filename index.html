@@ -186,7 +186,6 @@
     <main class="content">
       
       <section id="sec-1-1" class="doc-panel active">
-        <p class="chapter-kicker">1. Creacion y Configuracion del Proyecto</p>
         <h1><span class="title-num">1.1</span> Creacion en IntelliJ IDEA y archivo pom.xml</h1>
         <div class="prose">
           <p>El proyecto se creo en IntelliJ IDEA bajo el sistema de construccion Apache Maven. Se asigno el identificador de grupo co.edu.uniquindio, correspondiente a la Universidad del Quindio, y el artefacto monedero-virtual con empaquetado jar.</p>
@@ -214,7 +213,6 @@
       </section>
 
       <section id="sec-1-2" class="doc-panel">
-        <p class="chapter-kicker">1. Creacion y Configuracion del Proyecto</p>
         <h1><span class="title-num">1.2</span> Descriptor modular y jerarquia de paquetes</h1>
         <div class="prose">
           <p>La estructura del proyecto se organizo en paquetes separados por responsabilidad: app (arranque y contexto compartido), domain.model (entidades y enumeraciones), domain.interfaces (contratos), domain.exception (excepciones propias), repository y repository.memory (persistencia en memoria), service (reglas de negocio), controller (controladores FXML) y util (validaciones y formatos).</p>
@@ -249,7 +247,6 @@
       </section>
 
       <section id="sec-2-1" class="doc-panel">
-        <p class="chapter-kicker">2. Modelo del Dominio, Interfaces y Excepciones</p>
         <h1><span class="title-num">2.1</span> Entidades Cliente, Monedero y enumeraciones</h1>
         <div class="prose">
           <p>La clase Cliente representa a cada usuario individual del sistema. Almacena su UUID, nombre, correo, telefono, PIN de acceso validado mediante validarPin(), puntos acumulados, rango actual y colecciones internas de monederos, movimientos de puntos, alertas y canjes expuestas como listas inmodificables.</p>
@@ -280,7 +277,6 @@
       </section>
 
       <section id="sec-2-2" class="doc-panel">
-        <p class="chapter-kicker">2. Modelo del Dominio, Interfaces y Excepciones</p>
         <h1><span class="title-num">2.2</span> Jerarquia de Transaccion e interfaces de dominio</h1>
         <div class="prose">
           <p>Se definio la clase abstracta Transaccion implementando la interfaz Reversible. Esta superclase concentra los atributos comunes (id, monto, fecha, estado, descripcion, sospechosa, puntosGenerados) y declara los metodos abstractos ejecutar(), revertir(), obtenerTipo(), obtenerClientePrincipal() e involucraCliente(UUID).</p>
@@ -311,7 +307,6 @@
       </section>
 
       <section id="sec-2-3" class="doc-panel">
-        <p class="chapter-kicker">2. Modelo del Dominio, Interfaces y Excepciones</p>
         <h1><span class="title-num">2.3</span> Excepciones personalizadas y utilidades</h1>
         <div class="prose">
           <p>Para controlar los errores propios de la operacion financiera se crearon cuatro excepciones en com.monedero.domain.exception heredando de RuntimeException: SaldoInsuficienteException, PuntosInsuficientesException, MontoInvalidoException y EntidadNoEncontradaException.</p>
@@ -343,7 +338,6 @@
       </section>
 
       <section id="sec-3-1" class="doc-panel">
-        <p class="chapter-kicker">3. Repositorios y Servicios Financieros</p>
         <h1><span class="title-num">3.1</span> Repositorios en memoria con LinkedHashMap y Optional</h1>
         <div class="prose">
           <p>La persistencia se abstrajo mediante cinco interfaces en com.monedero.repository (ClienteRepository, MonederoRepository, TransaccionRepository, BeneficioRepository y ProgramadaRepository) y sus respectivas implementaciones en com.monedero.repository.memory.</p>
@@ -376,7 +370,6 @@
       </section>
 
       <section id="sec-3-2" class="doc-panel">
-        <p class="chapter-kicker">3. Repositorios y Servicios Financieros</p>
         <h1><span class="title-num">3.2</span> Autenticacion individual y gestion de monederos</h1>
         <div class="prose">
           <p>ClienteService gestiona el registro de nuevas cuentas verificando correo unico y la autenticacion individual por correo y PIN en autenticar(correo, pin). Cada cuenta registrada inicia con un monedero principal activo.</p>
@@ -409,7 +402,6 @@
       </section>
 
       <section id="sec-3-3" class="doc-panel">
-        <p class="chapter-kicker">3. Repositorios y Servicios Financieros</p>
         <h1><span class="title-num">3.3</span> Operaciones financieras y transferencias entre monederos propios</h1>
         <div class="prose">
           <p>TransaccionService coordina depositos, retiros, transferencias y reversiones. Tras ejecutar la operacion y persistirla, actualiza puntos, ejecuta la deteccion de transacciones atipicas y verifica si el saldo descendio del umbral de alerta ($50.00).</p>
@@ -444,7 +436,6 @@
       </section>
 
       <section id="sec-3-4" class="doc-panel">
-        <p class="chapter-kicker">3. Repositorios y Servicios Financieros</p>
         <h1><span class="title-num">3.4</span> Sistema de puntos, rangos y canje de beneficios</h1>
         <div class="prose">
           <p>PuntosService implementa CalculadorPuntos otorgando puntos por cada bloque completo de 100 unidades: 1 punto en depositos, 2 en retiros y 3 en transferencias, mas la bonificacion porcentual del rango actual del cliente. Al acumular o revertir puntos, el cliente recalcula automaticamente su RangoCliente (BRONCE, PLATA, ORO o PLATINO).</p>
@@ -471,7 +462,6 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       </section>
 
       <section id="sec-4-1" class="doc-panel">
-        <p class="chapter-kicker">4. Funcionalidades Avanzadas, CRUD y Pruebas</p>
         <h1><span class="title-num">4.1</span> Transacciones programadas con ordenamiento por insercion</h1>
         <div class="prose">
           <p>TransaccionProgramada modela operaciones unicas o recurrentes (DIARIA, SEMANAL, MENSUAL). En ProgramacionService.obtenerOrdenadasPorFecha() se implemento el algoritmo de ordenamiento por insercion (Insertion Sort) comparando la fecha de proxima ejecucion.</p>
@@ -502,7 +492,6 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       </section>
 
       <section id="sec-4-2" class="doc-panel">
-        <p class="chapter-kicker">4. Funcionalidades Avanzadas, CRUD y Pruebas</p>
         <h1><span class="title-num">4.2</span> Analisis de patrones de gasto con Stream API</h1>
         <div class="prose">
           <p>AnalisisGastosService procesa las transacciones completadas mediante Stream API y colectores (groupingBy, reducing) para calcular ingresos totales, gastos totales, egresos agrupados por tipo y las operaciones de mayor valor.</p>
@@ -530,7 +519,6 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       </section>
 
       <section id="sec-4-3" class="doc-panel">
-        <p class="chapter-kicker">4. Funcionalidades Avanzadas, CRUD y Pruebas</p>
         <h1><span class="title-num">4.3</span> Deteccion de transacciones atipicas y alertas locales</h1>
         <div class="prose">
           <p>DeteccionAtipicasService evalua cada movimiento cuando el cliente posee al menos tres transacciones completadas previas. Calcula el promedio historico y la desviacion estandar poblacional en tiempo O(n) para obtener el umbral promedio + 2 * desviacion.</p>
@@ -589,7 +577,6 @@ public double calcularUmbral(List&lt;Double&gt; montos) {
       </section>
 
       <section id="sec-4-5" class="doc-panel">
-        <p class="chapter-kicker">4. Funcionalidades Avanzadas, CRUD y Pruebas</p>
         <h1><span class="title-num">4.5</span> Pruebas unitarias con JUnit 5</h1>
         <div class="prose">
           <p>En src/test/java/com/monedero/ se escribieron ocho clases de prueba con JUnit 5 cubriendo reglas de rango, registro y autenticacion de clientes, gestion de monederos, transacciones, comision cero entre monederos propios, puntos, canje de beneficios, ordenamiento por insercion y deteccion de anomalias.</p>
@@ -616,7 +603,6 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       </section>
 
       <section id="sec-5-1" class="doc-panel">
-        <p class="chapter-kicker">5. Interfaz Grafica JavaFX (FXML, Controladores y CSS)</p>
         <h1><span class="title-num">5.1</span> Inicio de sesion individual y contenedor principal</h1>
         <div class="prose">
           <p>Al iniciar MonederoApplication se muestra login-view.fxml para autenticar a un cliente individual o registrar una cuenta nueva. Al validar las credenciales, AppContext guarda el cliente activo y abre main-view.fxml.</p>
@@ -649,7 +635,6 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       </section>
 
       <section id="sec-5-2" class="doc-panel">
-        <p class="chapter-kicker">5. Interfaz Grafica JavaFX (FXML, Controladores y CSS)</p>
         <h1><span class="title-num">5.2</span> Diseno responsivo, animaciones y correccion en FXML</h1>
         <div class="prose">
           <p>Las transiciones entre vistas se implementaron en animarEntrada() combinando FadeTransition y TranslateTransition durante 200 ms. La hoja styles.css define la apariencia visual y las vistas emplean ScrollPane, FlowPane y ajuste proporcional de columnas en TableView para adaptarse a distintos tamanos de pantalla.</p>
@@ -681,7 +666,6 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       </section>
       
     <section id="informe-final" class="doc-panel">
-      <p class="chapter-kicker">Entrega Final</p>
       <h1>Informe Final</h1>
 
       <div class="informe-block">
