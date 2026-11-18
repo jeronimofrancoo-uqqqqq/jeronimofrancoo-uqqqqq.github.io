@@ -62,7 +62,7 @@
   <header class="topbar">
     <div>
       <span class="topbar-title">Monedero Virtual</span>
-      <span class="topbar-sub">Documentacion Tecnica</span>
+      <span class="topbar-sub">Documentacion tecnica</span>
     </div>
   </header>
   <div class="layout">
@@ -72,24 +72,24 @@
       <div class="nav-group">
         <button type="button" class="nav-chapter" data-target="sec-1-1">
           <span class="num">1.</span>
-          <span>Creacion y Configuracion del Proyecto</span>
+          <span>Creacion y configuracion del proyecto</span>
         </button>
         <div class="nav-subs">
           
             <button type="button" class="nav-sub" data-target="sec-1-1">
               <span class="num">1.1</span>
-              <span>Creacion en IntelliJ IDEA y archivo pom.xml</span>
+              <span>Creacion en IntelliJ IDEA y el archivo pom.xml</span>
             </button>
             <button type="button" class="nav-sub" data-target="sec-1-2">
               <span class="num">1.2</span>
-              <span>Descriptor modular y jerarquia de paquetes</span>
+              <span>Descriptor modular y la jerarquia de paquetes</span>
             </button>
         </div>
       </div>
       <div class="nav-group">
         <button type="button" class="nav-chapter" data-target="sec-2-1">
           <span class="num">2.</span>
-          <span>Modelo del Dominio, Interfaces y Excepciones</span>
+          <span>Modelo del dominio, interfaces y excepciones</span>
         </button>
         <div class="nav-subs">
           
@@ -99,7 +99,7 @@
             </button>
             <button type="button" class="nav-sub" data-target="sec-2-2">
               <span class="num">2.2</span>
-              <span>Jerarquia de Transaccion e interfaces de dominio</span>
+              <span>Jerarquia de Transaccion e interfaces del dominio</span>
             </button>
             <button type="button" class="nav-sub" data-target="sec-2-3">
               <span class="num">2.3</span>
@@ -110,7 +110,7 @@
       <div class="nav-group">
         <button type="button" class="nav-chapter" data-target="sec-3-1">
           <span class="num">3.</span>
-          <span>Repositorios y Servicios Financieros</span>
+          <span>Repositorios y servicios financieros</span>
         </button>
         <div class="nav-subs">
           
@@ -135,7 +135,7 @@
       <div class="nav-group">
         <button type="button" class="nav-chapter" data-target="sec-4-1">
           <span class="num">4.</span>
-          <span>Funcionalidades Avanzadas, CRUD y Pruebas</span>
+          <span>Funcionalidades avanzadas, CRUD y pruebas</span>
         </button>
         <div class="nav-subs">
           
@@ -164,7 +164,7 @@
       <div class="nav-group">
         <button type="button" class="nav-chapter" data-target="sec-5-1">
           <span class="num">5.</span>
-          <span>Interfaz Grafica JavaFX (FXML, Controladores y CSS)</span>
+          <span>Interfaz grafica JavaFX (FXML, controladores y CSS)</span>
         </button>
         <div class="nav-subs">
           
@@ -180,22 +180,22 @@
       </div>
       </div>
       <div class="sidebar-footer">
-        <button type="button" class="btn-informe" data-target="informe-final">Informe Final</button>
+        <button type="button" class="btn-informe" data-target="informe-final">Informe final</button>
       </div>
     </aside>
     <main class="content">
       
       <section id="sec-1-1" class="doc-panel active">
-        <h1><span class="title-num">1.1</span> Creacion en IntelliJ IDEA y archivo pom.xml</h1>
+        <h1><span class="title-num">1.1</span> Creacion en IntelliJ IDEA y el archivo pom.xml</h1>
         <div class="prose">
-          <p>El proyecto se creo en IntelliJ IDEA bajo el sistema de construccion Apache Maven. Se asigno el identificador de grupo co.edu.uniquindio, correspondiente a la Universidad del Quindio, y el artefacto monedero-virtual con empaquetado jar.</p>
-<p>En el archivo pom.xml se fijo Java 21 (maven.compiler.release = 21) con codificacion UTF-8. Se declararon las dependencias javafx-controls y javafx-fxml en version 21.0.5 para la interfaz grafica, junto con junit-jupiter 5.10.2 para pruebas unitarias y el plugin javafx-maven-plugin apuntando a com.monedero.app.MonederoApplication.</p>
+          <p>Bueno, el proyecto se creo en IntelliJ IDEA bajo el sistema de construccion de Apache Maven. Se le asigno el identificador de grupo co.edu.uniquindio, que corresponde a la Universidad del Quindio, y el artefacto monedero-virtual con empaquetado jar. La verdad es que todo fue paso a paso, sin mucho misterio.</p>
+<p>En el archivo pom.xml se fijo Java 21 (maven.compiler.release = 21) con codificacion UTF-8. Pues se declararon las dependencias javafx-controls y javafx-fxml en la version 21.0.5 para la interfaz grafica, junto con junit-jupiter 5.10.2 para las pruebas unitarias y el plugin javafx-maven-plugin que apunta a com.monedero.app.MonederoApplication. Se declaro, se declaro y listo.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
             <span>Fig. 1</span>
           </div>
-          <figcaption><strong>Fig. 1.</strong> Creacion del proyecto Maven en IntelliJ IDEA y configuracion de pom.xml</figcaption>
+          <figcaption><strong>Fig. 1.</strong> Creacion del proyecto Maven en IntelliJ IDEA y la configuracion del pom.xml</figcaption>
         </figure>
         <div class="code-box">
                 <div class="code-header">pom.xml</div>
@@ -213,16 +213,16 @@
       </section>
 
       <section id="sec-1-2" class="doc-panel">
-        <h1><span class="title-num">1.2</span> Descriptor modular y jerarquia de paquetes</h1>
+        <h1><span class="title-num">1.2</span> Descriptor modular y la jerarquia de paquetes</h1>
         <div class="prose">
-          <p>La estructura del proyecto se organizo en paquetes separados por responsabilidad: app (arranque y contexto compartido), domain.model (entidades y enumeraciones), domain.interfaces (contratos), domain.exception (excepciones propias), repository y repository.memory (persistencia en memoria), service (reglas de negocio), controller (controladores FXML) y util (validaciones y formatos).</p>
-<p>En module-info.java se declaro el modulo com.monedero requiriendo javafx.controls y javafx.fxml. Se abrio com.monedero.controller hacia javafx.fxml para la inyeccion de componentes @FXML y com.monedero.domain.model hacia javafx.base para el enlace de datos en tablas TableView.</p>
+          <p>La estructura del proyecto se organizo en paquetes separados por responsabilidad: app (arranque y contexto compartido), domain.model (entidades y enumeraciones), domain.interfaces (contratos), domain.exception (excepciones propias), repository y repository.memory (persistencia en memoria), service (reglas de negocio), controller (controladores FXML) y util (validaciones y formatos). Todo bien separadito, la verdad.</p>
+<p>En module-info.java se declaro el modulo com.monedero requiriendo javafx.controls y javafx.fxml. Se abrio com.monedero.controller hacia javafx.fxml para la inyeccion de los componentes @FXML y com.monedero.domain.model hacia javafx.base para el enlace de datos en las tablas TableView. Nada del otro mundo, pues.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
             <span>Fig. 2</span>
           </div>
-          <figcaption><strong>Fig. 2.</strong> Estructura de paquetes del proyecto Maven y archivo module-info.java</figcaption>
+          <figcaption><strong>Fig. 2.</strong> Estructura de paquetes del proyecto Maven y el archivo module-info.java</figcaption>
         </figure>
         <div class="code-box">
                 <div class="code-header">src/main/java/module-info.java</div>
@@ -249,9 +249,9 @@
       <section id="sec-2-1" class="doc-panel">
         <h1><span class="title-num">2.1</span> Entidades Cliente, Monedero y enumeraciones</h1>
         <div class="prose">
-          <p>La clase Cliente representa a cada usuario individual del sistema. Almacena su UUID, nombre, correo, telefono, PIN de acceso validado mediante validarPin(), puntos acumulados, rango actual y colecciones internas de monederos, movimientos de puntos, alertas y canjes expuestas como listas inmodificables.</p>
-<p>La clase Monedero administra el saldo mediante BigDecimal redondeado a dos decimales (RoundingMode.HALF_UP). El saldo solo puede alterarse mediante acreditar() y debitar(), verificando previamente que el monedero este activo y que el monto sea valido.</p>
-<p>Las reglas fijas del negocio se definieron mediante ocho enumeraciones: RangoCliente (BRONCE, PLATA, ORO, PLATINO), TipoTransaccion, EstadoTransaccion, Frecuencia, TipoBeneficio, EstadoCanje, TipoAlerta y TipoMovimientoPuntos.</p>
+          <p>La clase Cliente representa a cada usuario individual del sistema. Almacena su UUID, nombre, correo, telefono, PIN de acceso que se valida mediante validarPin(), puntos acumulados, rango actual y colecciones internas de monederos, movimientos de puntos, alertas y canjes que se exponen como listas inmodificables. Bastante completo el cliente, la verdad.</p>
+<p>La clase Monedero administra el saldo mediante BigDecimal redondeado a dos decimales (RoundingMode.HALF_UP). Pues el saldo solo se puede alterar mediante acreditar() y debitar(), verificando previamente que el monedero este activo y que el monto sea valido. No hay otra forma, de que no.</p>
+<p>Las reglas fijas del negocio se definieron mediante ocho enumeraciones: RangoCliente (BRONCE, PLATA, ORO, PLATINO), TipoTransaccion, EstadoTransaccion, Frecuencia, TipoBeneficio, EstadoCanje, TipoAlerta y TipoMovimientoPuntos. Ocho en total, ni una mas ni una menos.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -277,10 +277,10 @@
       </section>
 
       <section id="sec-2-2" class="doc-panel">
-        <h1><span class="title-num">2.2</span> Jerarquia de Transaccion e interfaces de dominio</h1>
+        <h1><span class="title-num">2.2</span> Jerarquia de Transaccion e interfaces del dominio</h1>
         <div class="prose">
-          <p>Se definio la clase abstracta Transaccion implementando la interfaz Reversible. Esta superclase concentra los atributos comunes (id, monto, fecha, estado, descripcion, sospechosa, puntosGenerados) y declara los metodos abstractos ejecutar(), revertir(), obtenerTipo(), obtenerClientePrincipal() e involucraCliente(UUID).</p>
-<p>De Transaccion heredan tres subclases concretas: Deposito, Retiro y Transferencia. Cada una implementa su propia logica de ejecucion y reversion. Adicionalmente se crearon las interfaces CalculadorPuntos y Notificable para desacoplar la puntuacion y el envio de alertas.</p>
+          <p>Se definio la clase abstracta Transaccion que implementa la interfaz Reversible. Esta superclase concentra los atributos comunes (id, monto, fecha, estado, descripcion, sospechosa, puntosGenerados) y declara los metodos abstractos ejecutar(), revertir(), obtenerTipo(), obtenerClientePrincipal() e involucraCliente(UUID). Todo bien definido desde arriba, pues.</p>
+<p>De Transaccion heredan tres subclases concretas: Deposito, Retiro y Transferencia. Cada una implementa su propia logica de ejecucion y de reversion. Ademas se crearon las interfaces CalculadorPuntos y Notificable para desacoplar la puntuacion y el envio de alertas. Se crearon, se crearon y ya.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -309,8 +309,8 @@
       <section id="sec-2-3" class="doc-panel">
         <h1><span class="title-num">2.3</span> Excepciones personalizadas y utilidades</h1>
         <div class="prose">
-          <p>Para controlar los errores propios de la operacion financiera se crearon cuatro excepciones en com.monedero.domain.exception heredando de RuntimeException: SaldoInsuficienteException, PuntosInsuficientesException, MontoInvalidoException y EntidadNoEncontradaException.</p>
-<p>En com.monedero.util se implementaron las clases Validaciones (verificacion de cadenas no vacias y conversion segura de montos positivos desde texto) y FormateadorMoneda (presentacion uniforme de cifras y fechas).</p>
+          <p>Para controlar los errores propios de la operacion financiera se crearon cuatro excepciones en com.monedero.domain.exception que heredan de RuntimeException: SaldoInsuficienteException, PuntosInsuficientesException, MontoInvalidoException y EntidadNoEncontradaException. Cuatro excepciones, ni mas ni menos.</p>
+<p>En com.monedero.util se implementaron las clases Validaciones (verificacion de cadenas no vacias y conversion segura de montos positivos desde texto) y FormateadorMoneda (presentacion uniforme de cifras y fechas). La verdad es que estas utilidades salvan bastante.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -340,8 +340,8 @@
       <section id="sec-3-1" class="doc-panel">
         <h1><span class="title-num">3.1</span> Repositorios en memoria con LinkedHashMap y Optional</h1>
         <div class="prose">
-          <p>La persistencia se abstrajo mediante cinco interfaces en com.monedero.repository (ClienteRepository, MonederoRepository, TransaccionRepository, BeneficioRepository y ProgramadaRepository) y sus respectivas implementaciones en com.monedero.repository.memory.</p>
-<p>Cada implementacion en memoria utiliza un LinkedHashMap indexado por UUID para preservar el orden de insercion con busqueda directa y retorna Optional en las consultas por identificador.</p>
+          <p>La persistencia se abstrajo mediante cinco interfaces en com.monedero.repository (ClienteRepository, MonederoRepository, TransaccionRepository, BeneficioRepository y ProgramadaRepository) y sus respectivas implementaciones en com.monedero.repository.memory. Cinco interfaces, cinco implementaciones, todo cuadrado.</p>
+<p>Cada implementacion en memoria utiliza un LinkedHashMap indexado por UUID para preservar el orden de insercion con busqueda directa y retorna Optional en las consultas por identificador. La verdad, cada implementacion sigue el mismo patron, que no es casualidad.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -372,8 +372,8 @@
       <section id="sec-3-2" class="doc-panel">
         <h1><span class="title-num">3.2</span> Autenticacion individual y gestion de monederos</h1>
         <div class="prose">
-          <p>ClienteService gestiona el registro de nuevas cuentas verificando correo unico y la autenticacion individual por correo y PIN en autenticar(correo, pin). Cada cuenta registrada inicia con un monedero principal activo.</p>
-<p>MonederoService permite a cada cliente autenticado crear multiples monederos propios (por ejemplo Principal, Ahorros o Gastos), consultar el saldo total consolidado y activar o desactivar cada monedero de forma independiente.</p>
+          <p>ClienteService gestiona el registro de nuevas cuentas verificando correo unico y la autenticacion individual por correo y PIN en autenticar(correo, pin). Cada cuenta registrada inicia con un monedero principal activo. Pues asi de simple.</p>
+<p>MonederoService permite a cada cliente autenticado crear multiples monederos propios (por ejemplo Principal, Ahorros o Gastos), consultar el saldo total consolidado y activar o desactivar cada monedero de forma independiente. Se puede tener varios, la verdad es que si.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -404,8 +404,8 @@
       <section id="sec-3-3" class="doc-panel">
         <h1><span class="title-num">3.3</span> Operaciones financieras y transferencias entre monederos propios</h1>
         <div class="prose">
-          <p>TransaccionService coordina depositos, retiros, transferencias y reversiones. Tras ejecutar la operacion y persistirla, actualiza puntos, ejecuta la deteccion de transacciones atipicas y verifica si el saldo descendio del umbral de alerta ($50.00).</p>
-<p>Los retiros aplican una comision base del 1% y las transferencias hacia terceros una comision base del 2%, ajustadas segun el rango y beneficios del cliente. Cuando el monedero de origen y destino pertenecen al mismo propietario, la comision se establece en BigDecimal.ZERO ($0.00). La funcion revertirTransaccion() revierte tanto los fondos como los puntos generados.</p>
+          <p>TransaccionService coordina depositos, retiros, transferencias y reversiones. Tras ejecutar la operacion y persistirla, actualiza puntos, ejecuta la deteccion de transacciones atipicas y verifica de que el saldo descendio del umbral de alerta ($50.00). De que si, de que si.</p>
+<p>Los retiros aplican una comision base del 1% y las transferencias hacia terceros una comision base del 2%, ajustadas segun el rango y beneficios del cliente. Cuando el monedero de origen y destino pertenecen al mismo propietario, la comision se establece en BigDecimal.ZERO ($0.00). La funcion revertirTransaccion() revierte tanto los fondos como los puntos generados. O sea, todo vuelve como estaba.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -438,8 +438,8 @@
       <section id="sec-3-4" class="doc-panel">
         <h1><span class="title-num">3.4</span> Sistema de puntos, rangos y canje de beneficios</h1>
         <div class="prose">
-          <p>PuntosService implementa CalculadorPuntos otorgando puntos por cada bloque completo de 100 unidades: 1 punto en depositos, 2 en retiros y 3 en transferencias, mas la bonificacion porcentual del rango actual del cliente. Al acumular o revertir puntos, el cliente recalcula automaticamente su RangoCliente (BRONCE, PLATA, ORO o PLATINO).</p>
-<p>BeneficioService valida la disponibilidad del beneficio y los puntos del cliente antes de registrar el canje en CanjeBeneficio. Si el beneficio es de tipo BONO_SALDO, acredita automaticamente el valor en el monedero activo del usuario.</p>
+          <p>PuntosService implementa CalculadorPuntos otorgando puntos por cada bloque completo de 100 unidades: 1 punto en depositos, 2 en retiros y 3 en transferencias, mas la bonificacion porcentual del rango actual del cliente. Al acumular o revertir puntos, el cliente recalcula automaticamente su RangoCliente (BRONCE, PLATA, ORO o PLATINO). Se recalcula solo, o sea, sin que uno haga nada.</p>
+<p>BeneficioService valida la disponibilidad del beneficio y los puntos del cliente antes de registrar el canje en CanjeBeneficio. Si el beneficio es de tipo BONO_SALDO, acredita automaticamente el valor en el monedero activo del usuario. Pues eso, que el saldo sube sin que uno mueva un dedo.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -464,8 +464,8 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       <section id="sec-4-1" class="doc-panel">
         <h1><span class="title-num">4.1</span> Transacciones programadas con ordenamiento por insercion</h1>
         <div class="prose">
-          <p>TransaccionProgramada modela operaciones unicas o recurrentes (DIARIA, SEMANAL, MENSUAL). En ProgramacionService.obtenerOrdenadasPorFecha() se implemento el algoritmo de ordenamiento por insercion (Insertion Sort) comparando la fecha de proxima ejecucion.</p>
-<p>El metodo ejecutarPendientes() procesa en orden cronologico las operaciones cuya fecha ya se cumplio y emite alertas locales ante ejecuciones exitosas o fallidas.</p>
+          <p>TransaccionProgramada modela operaciones unicas o recurrentes (DIARIA, SEMANAL, MENSUAL). En ProgramacionService.obtenerOrdenadasPorFecha() se implemento el algoritmo de ordenamiento por insercion (Insertion Sort) comparando la fecha de proxima ejecucion. Un algoritmo clasico, la verdad, de los que uno ve en clase.</p>
+<p>El metodo ejecutarPendientes() procesa en orden cronologico las operaciones cuya fecha ya se cumplio y emite alertas locales ante ejecuciones exitosas o fallidas. Pues eso, que avisa cuando algo sale bien y cuando sale mal.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -494,8 +494,8 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       <section id="sec-4-2" class="doc-panel">
         <h1><span class="title-num">4.2</span> Analisis de patrones de gasto con Stream API</h1>
         <div class="prose">
-          <p>AnalisisGastosService procesa las transacciones completadas mediante Stream API y colectores (groupingBy, reducing) para calcular ingresos totales, gastos totales, egresos agrupados por tipo y las operaciones de mayor valor.</p>
-<p>Los metodos esIngresoParaCliente() y esGastoParaCliente() excluyen las transferencias internas realizadas entre monederos del mismo titular para no distorsionar las metricas reales de ingreso o gasto.</p>
+          <p>AnalisisGastosService procesa las transacciones completadas mediante Stream API y colectores (groupingBy, reducing) para calcular ingresos totales, gastos totales, egresos agrupados por tipo y las operaciones de mayor valor. Se procesa, se agrupa, se reduce, todo con la misma API.</p>
+<p>Los metodos esIngresoParaCliente() y esGastoParaCliente() excluyen las transferencias internas realizadas entre monederos del mismo titular para no distorsionar las metricas reales de ingreso o gasto. La verdad es que si no las excluyeran, las cuentas saldrian mal.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -521,8 +521,8 @@ if (cliente != null &amp;&amp; puntosBase &gt; 0) {
       <section id="sec-4-3" class="doc-panel">
         <h1><span class="title-num">4.3</span> Deteccion de transacciones atipicas y alertas locales</h1>
         <div class="prose">
-          <p>DeteccionAtipicasService evalua cada movimiento cuando el cliente posee al menos tres transacciones completadas previas. Calcula el promedio historico y la desviacion estandar poblacional en tiempo O(n) para obtener el umbral promedio + 2 * desviacion.</p>
-<p>Cuando una transaccion supera ese umbral, se marca como sospechosa y NotificacionService registra una alerta local de tipo TRANSACCION_ATIPICA en el historial del cliente.</p>
+          <p>DeteccionAtipicasService evalua cada movimiento cuando el cliente posee al menos tres transacciones completadas previas. Calcula el promedio historico y la desviacion estandar poblacional en tiempo O(n) para obtener el umbral promedio + 2 * desviacion. Pues eso, puro calculo estadistico.</p>
+<p>Cuando una transaccion supera ese umbral, se marca como sospechosa y NotificacionService registra una alerta local de tipo TRANSACCION_ATIPICA en el historial del cliente. Se marca, se registra, se avisa, todo en orden.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -551,11 +551,11 @@ public double calcularUmbral(List&lt;Double&gt; montos) {
       </section>
 
       <section id="sec-4-4" class="doc-panel">
-        <p class="chapter-kicker">4. Funcionalidades Avanzadas, CRUD y Pruebas</p>
+        <p class="chapter-kicker">4. Funcionalidades avanzadas, CRUD y pruebas</p>
         <h1><span class="title-num">4.4</span> CRUD de lista de tareas personal por cliente</h1>
         <div class="prose">
-          <p>Se implemento la entidad Tarea, el servicio TareaService y el controlador TareaController asociado a tareas-view.fxml para administrar una lista de tareas simple vinculada al identificador del cliente activo.</p>
-<p>El modulo cubre todas las operaciones CRUD: crear tareas validando titulo obligatorio, listar las tareas del cliente autenticado, actualizar titulo/descripcion/fecha limite, alternar el estado completada/pendiente y eliminar tareas seleccionadas.</p>
+          <p>Se implemento la entidad Tarea, el servicio TareaService y el controlador TareaController asociado a tareas-view.fxml para administrar una lista de tareas simple vinculada al identificador del cliente activo. Una lista de tareas, pues, como la de cualquier app.</p>
+<p>El modulo cubre todas las operaciones CRUD: crear tareas validando titulo obligatorio, listar las tareas del cliente autenticado, actualizar titulo/descripcion/fecha limite, alternar el estado completada/pendiente y eliminar tareas seleccionadas. Se crea, se lista, se actualiza, se alterna, se elimina. Todo el ciclo completo.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -579,7 +579,7 @@ public double calcularUmbral(List&lt;Double&gt; montos) {
       <section id="sec-4-5" class="doc-panel">
         <h1><span class="title-num">4.5</span> Pruebas unitarias con JUnit 5</h1>
         <div class="prose">
-          <p>En src/test/java/com/monedero/ se escribieron ocho clases de prueba con JUnit 5 cubriendo reglas de rango, registro y autenticacion de clientes, gestion de monederos, transacciones, comision cero entre monederos propios, puntos, canje de beneficios, ordenamiento por insercion y deteccion de anomalias.</p>
+          <p>En src/test/java/com/monedero/ se escribieron ocho clases de prueba con JUnit 5 cubriendo reglas de rango, registro y autenticacion de clientes, gestion de monederos, transacciones, comision cero entre monederos propios, puntos, canje de beneficios, ordenamiento por insercion y deteccion de anomalias. Ocho clases de prueba, y la verdad es que se agradecen.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -605,8 +605,8 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       <section id="sec-5-1" class="doc-panel">
         <h1><span class="title-num">5.1</span> Inicio de sesion individual y contenedor principal</h1>
         <div class="prose">
-          <p>Al iniciar MonederoApplication se muestra login-view.fxml para autenticar a un cliente individual o registrar una cuenta nueva. Al validar las credenciales, AppContext guarda el cliente activo y abre main-view.fxml.</p>
-<p>MainController organiza la navegacion lateral donde cada boton carga una vista FXML especifica dentro del contenedor central: Mis Monederos, Transacciones, Puntos y Beneficios, Programadas, Reportes y Alertas, Mi Perfil y Lista de Tareas.</p>
+          <p>Al iniciar MonederoApplication se muestra login-view.fxml para autenticar a un cliente individual o registrar una cuenta nueva. Al validar las credenciales, AppContext guarda el cliente activo y abre main-view.fxml. Pues eso, login primero, app despues.</p>
+<p>MainController organiza la navegacion lateral donde cada boton carga una vista FXML especifica dentro del contenedor central: Mis Monederos, Transacciones, Puntos y Beneficios, Programadas, Reportes y Alertas, Mi Perfil y Lista de Tareas. Cada boton, su vista. Todo bien ordenado, la verdad.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -637,8 +637,8 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       <section id="sec-5-2" class="doc-panel">
         <h1><span class="title-num">5.2</span> Diseno responsivo, animaciones y correccion en FXML</h1>
         <div class="prose">
-          <p>Las transiciones entre vistas se implementaron en animarEntrada() combinando FadeTransition y TranslateTransition durante 200 ms. La hoja styles.css define la apariencia visual y las vistas emplean ScrollPane, FlowPane y ajuste proporcional de columnas en TableView para adaptarse a distintos tamanos de pantalla.</p>
-<p>Al probar la pestana de Reportes y Alertas se corrigio un fallo de carga provocado porque FXMLLoader interpreta los atributos de texto que inician con &#39;$&#39; (como text=&quot;$0.00&quot;) como expresiones de variables del contexto. Se elimino el prefijo &#39;$&#39; literal en los valores iniciales del FXML y se separo el modulo en dos pestanas: Analisis de Gastos y Anomalias y Alertas.</p>
+          <p>Las transiciones entre vistas se implementaron en animarEntrada() combinando FadeTransition y TranslateTransition durante 200 ms. La hoja styles.css define la apariencia visual y las vistas emplean ScrollPane, FlowPane y ajuste proporcional de columnas en TableView para adaptarse a distintos tamanos de pantalla. Se anima, se adapta, se ve bien.</p>
+<p>Al probar la pestana de Reportes y Alertas se corrigio un fallo de carga provocado porque FXMLLoader interpreta los atributos de texto que inician con '$' (como text="$0.00") como expresiones de variables del contexto. Se elimino el prefijo '$' literal en los valores iniciales del FXML y se separo el modulo en dos pestanas: Analisis de Gastos y Anomalias y Alertas. La verdad es que ese bug daba dolor de cabeza.</p>
         </div>
         <figure class="fig-wrapper">
           <div class="fig-frame">
@@ -666,14 +666,14 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       </section>
       
     <section id="informe-final" class="doc-panel">
-      <h1>Informe Final</h1>
+      <h1>Informe final</h1>
 
       <div class="informe-block">
-        <h2>1. Pasos del Pensamiento Computacional</h2>
+        <h2>1. Pasos del pensamiento computacional</h2>
         
           <div class="informe-item">
             <h3>1. Abstraccion</h3>
-            <p>Consistio en identificar los elementos esenciales del problema del monedero virtual y descartar detalles tecnicos ajenos al alcance academico (como pasarelas bancarias externas o servidores remotos).</p>
+            <p>Bueno, consistio en identificar los elementos esenciales del problema del monedero virtual y descartar los detalles tecnicos ajenos al alcance academico (como pasarelas bancarias externas o servidores remotos). La verdad es que fue cuestion de quedarse con lo importante.</p>
             <ul>
               <li>Se abstrajo a cada usuario en la clase Cliente con credenciales de acceso (correo y PIN), puntos acumulados, rango actual y sus colecciones asociadas.</li>
 <li>Las cuentas del cliente se modelaron mediante Monedero con saldo decimal exacto (BigDecimal) y estado activo/inactivo.</li>
@@ -683,7 +683,7 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
 
           <div class="informe-item">
             <h3>2. Descomposicion</h3>
-            <p>El sistema se dividio en capas y modulos independientes para resolver cada requerimiento por separado y facilitar su mantenimiento y prueba.</p>
+            <p>El sistema se dividio en capas y modulos independientes para resolver cada requerimiento por separado y facilitar su mantenimiento y prueba. Se dividio, se dividio, y quedo bien dividido.</p>
             <ul>
               <li>Separacion estructural en paquetes: app, domain (model, interfaces, exception), repository, service, controller y util.</li>
 <li>Division de la logica de negocio en servicios especializados: ClienteService, MonederoService, TransaccionService, PuntosService, BeneficioService, ProgramacionService, AnalisisGastosService, DeteccionAtipicasService, NotificacionService y TareaService.</li>
@@ -693,7 +693,7 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
 
           <div class="informe-item">
             <h3>3. Reconocimiento de patrones</h3>
-            <p>Se identificaron comportamientos repetitivos en el manejo de datos y flujos de operacion para resolverlos mediante estructuras reutilizables.</p>
+            <p>Se identificaron comportamientos repetitivos en el manejo de datos y flujos de operacion para resolverlos mediante estructuras reutilizables. Pues eso, ver que se repite y reutilizarlo.</p>
             <ul>
               <li>Patron de persistencia uniforme: los cinco repositorios en memoria replican la misma estructura basada en LinkedHashMap&lt;UUID, Entidad&gt; y retorno Optional&lt;T&gt;.</li>
 <li>Patron de ciclo financiero: toda operacion monetaria sigue la secuencia validacion -&gt; ejecucion -&gt; registro -&gt; calculo de puntos -&gt; analisis de atipicidad.</li>
@@ -703,7 +703,7 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
 
           <div class="informe-item">
             <h3>4. Codificacion</h3>
-            <p>Traduccion del diseno y los algoritmos definidos a codigo Java 21 compilado con Maven, JavaFX y validado mediante pruebas unitarias JUnit 5.</p>
+            <p>Traduccion del diseno y los algoritmos definidos a codigo Java 21 compilado con Maven, JavaFX y validado mediante pruebas unitarias JUnit 5. Se codifico, se compilo, se probo. Todo el ciclo.</p>
             <ul>
               <li>Implementacion del algoritmo de ordenamiento por insercion (Insertion Sort) en ProgramacionService.obtenerOrdenadasPorFecha().</li>
 <li>Codificacion del calculo estadistico O(n) de promedio, desviacion estandar poblacional y umbral (promedio + 2 * desviacion) en DeteccionAtipicasService.</li>
@@ -713,11 +713,11 @@ void transferirEntreMonederosDelMismoClienteNoCobraComision() {
       </div>
 
       <div class="informe-block">
-        <h2>2. Analisis Tecnico de los Principios de la Programacion Orientada a Objetos</h2>
+        <h2>2. Analisis tecnico de los principios de la programacion orientada a objetos</h2>
         
           <div class="informe-item">
             <h3>1. Abstraccion</h3>
-            <p>Se aplico definiendo clases abstractas e interfaces que especifican que operaciones debe cumplir un componente sin depender de su implementacion interna.</p>
+            <p>Se aplico definiendo clases abstractas e interfaces que especifican que operaciones debe cumplir un componente sin depender de su implementacion interna. O sea, se dice que hace, no como lo hace.</p>
             <ul>
               <li>La clase abstracta Transaccion establece la estructura base de todo movimiento financiero y declara los metodos abstractos ejecutar(), revertir(), obtenerTipo(), obtenerClientePrincipal() e involucraCliente(UUID).</li>
 <li>Las interfaces Reversible, CalculadorPuntos y Notificable definen contratos especificos implementados por las clases de dominio y servicio.</li>
@@ -740,7 +740,7 @@ public class PuntosService implements CalculadorPuntos {
 
           <div class="informe-item">
             <h3>2. Encapsulamiento</h3>
-            <p>Se protegio el estado interno de las entidades declarando atributos privados y restringiendo cualquier modificacion a metodos con reglas de validacion.</p>
+            <p>Se protegio el estado interno de las entidades declarando atributos privados y restringiendo cualquier modificacion a metodos con reglas de validacion. La verdad es que sin esto el codigo seria un caos.</p>
             <ul>
               <li>En Monedero, el atributo saldo es private y no posee metodo setSaldo(); solo cambia a traves de acreditar() y debitar() luego de validar estado activo, monto positivo y saldo suficiente.</li>
 <li>En Cliente, el PIN es privado y se verifica exclusivamente mediante validarPin() sin exponerlo al exterior.</li>
@@ -763,7 +763,7 @@ public List&lt;Monedero&gt; obtenerMonederos() {
 
           <div class="informe-item">
             <h3>3. Herencia</h3>
-            <p>Permitio reutilizar atributos, validaciones y comportamiento comun mediante especializacion de clases padre hacia clases hijas.</p>
+            <p>Permitio reutilizar atributos, validaciones y comportamiento comun mediante especializacion de clases padre hacia clases hijas. Se hereda, se hereda, y se ahorra codigo.</p>
             <ul>
               <li>Deposito, Retiro y Transferencia extienden la clase abstracta Transaccion, heredando el identificador UUID, el monto escalado a dos decimales, la fecha, el estado, la descripcion, el indicador sospechosa y los puntos generados.</li>
 <li>Las excepciones de negocio (SaldoInsuficienteException, PuntosInsuficientesException, MontoInvalidoException y EntidadNoEncontradaException) heredan de RuntimeException para integrarse de manera uniforme en el manejo de errores.</li>
@@ -786,51 +786,6 @@ public List&lt;Monedero&gt; obtenerMonederos() {
 
           <div class="informe-item">
             <h3>4. Polimorfismo</h3>
-            <p>Se empleo para tratar instancias concretas de distintas subclases o implementaciones a traves de un tipo padre o interfaz comun, resolviendo en tiempo de ejecucion el comportamiento especifico.</p>
+            <p>Se empleo para tratar instancias concretas de distintas subclases o implementaciones a traves de un tipo padre o interfaz comun, resolviendo en tiempo de ejecucion el comportamiento especifico. Pues eso, que un mismo metodo se comporta distinto segun quien lo llame.</p>
             <ul>
-              <li>En TransaccionService.revertirTransaccion(), el metodo invoca transaccion.revertir() sobre una referencia de tipo Transaccion; en tiempo de ejecucion se ejecuta la reversion especifica de Deposito, Retiro o Transferencia.</li>
-<li>En InMemoryTransaccionRepository.obtenerPorCliente(), cada transaccion evalua t.involucraCliente(clienteId) segun sus propios monederos involucrados.</li>
-<li>En PuntosService.calcularPuntos(Transaccion), un unico metodo recibe cualquier subclase de Transaccion e invoca obtenerTipo() y obtenerClientePrincipal() sin duplicar logica por cada tipo.</li>
-            </ul>
-            <div class="code-box">
-                    <div class="code-header">src/main/java/com/monedero/service/TransaccionService.java</div>
-                    <pre><code>public void revertirTransaccion(UUID transaccionId) {
-    Transaccion transaccion = transaccionRepository.buscarPorId(transaccionId)
-            .orElseThrow(() -&gt; new EntidadNoEncontradaException(&quot;Transaccion no encontrada.&quot;));
-    transaccion.revertir();
-    transaccionRepository.guardar(transaccion);
-    puntosService.revertirPuntosDeTransaccion(transaccion);
-}</code></pre>
-                  </div>
-          </div>
-      </div>
-    </section>
-  
-    </main>
-  </div>
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll("[data-target]");
-      var panels = document.querySelectorAll(".doc-panel");
-      function activar(id) {
-        for (var i = 0; i < panels.length; i++) {
-          panels[i].classList.toggle("active", panels[i].id === id);
-        }
-        for (var j = 0; j < buttons.length; j++) {
-          var b = buttons[j];
-          if (b.classList.contains("nav-sub") || b.classList.contains("btn-informe")) {
-            b.classList.toggle("active", b.getAttribute("data-target") === id);
-          }
-        }
-        window.scrollTo({ top: 0 });
-      }
-      for (var k = 0; k < buttons.length; k++) {
-        buttons[k].addEventListener("click", function () {
-          activar(this.getAttribute("data-target"));
-        });
-      }
-      activar("sec-1-1");
-    })();
-  </script>
-</body>
-</html>
+              <li>En TransaccionService.revertirTransaccion
