@@ -788,4 +788,49 @@ public List&lt;Monedero&gt; obtenerMonederos() {
             <h3>4. Polimorfismo</h3>
             <p>Se empleo para tratar instancias concretas de distintas subclases o implementaciones a traves de un tipo padre o interfaz comun, resolviendo en tiempo de ejecucion el comportamiento especifico. Pues eso, que un mismo metodo se comporta distinto segun quien lo llame.</p>
             <ul>
-              <li>En TransaccionService.revertirTransaccion
+              <li>En TransaccionService.revertirTransaccion(), el metodo invoca transaccion.revertir() sobre una referencia de tipo Transaccion; en tiempo de ejecucion se ejecuta la reversion especifica de Deposito, Retiro o Transferencia.</li>
+<li>En InMemoryTransaccionRepository.obtenerPorCliente(), cada transaccion evalua t.involucraCliente(clienteId) segun sus propios monederos involucrados.</li>
+<li>En PuntosService.calcularPuntos(Transaccion), un unico metodo recibe cualquier subclase de Transaccion e invoca obtenerTipo() y obtenerClientePrincipal() sin duplicar logica por cada tipo.</li>
+            </ul>
+            <div class="code-box">
+                    <div class="code-header">src/main/java/com/monedero/service/TransaccionService.java</div>
+                    <pre><code>public void revertirTransaccion(UUID transaccionId) {
+    Transaccion transaccion = transaccionRepository.buscarPorId(transaccionId)
+            .orElseThrow(() -&gt; new EntidadNoEncontradaException(&quot;Transaccion no encontrada.&quot;));
+    transaccion.revertir();
+    transaccionRepository.guardar(transaccion);
+    puntosService.revertirPuntosDeTransaccion(transaccion);
+}</code></pre>
+                  </div>
+          </div>
+      </div>
+    </section>
+  
+    </main>
+  </div>
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll("[data-target]");
+      var panels = document.querySelectorAll(".doc-panel");
+      function activar(id) {
+        for (var i = 0; i < panels.length; i++) {
+          panels[i].classList.toggle("active", panels[i].id === id);
+        }
+        for (var j = 0; j < buttons.length; j++) {
+          var b = buttons[j];
+          if (b.classList.contains("nav-sub") || b.classList.contains("btn-informe")) {
+            b.classList.toggle("active", b.getAttribute("data-target") === id);
+          }
+        }
+        window.scrollTo({ top: 0 });
+      }
+      for (var k = 0; k < buttons.length; k++) {
+        buttons[k].addEventListener("click", function () {
+          activar(this.getAttribute("data-target"));
+        });
+      }
+      activar("sec-1-1");
+    })();
+  </script>
+</body>
+</html>
